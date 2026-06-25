@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Floor Plans &amp; Designs – Enjo Constructions Uganda</title>
+  <meta name="description"
+    content="Browse our library of affordable 3D floor plans for Ugandan homes. Filter by bedrooms, budget, and house type. From UGX 8M starter homes to UGX 100M+ family homes." />
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar always-dark scrolled" id="navbar" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Enjo Constructions Home">
+        <div class="logo-icon"><img src="./assets/images/logo.svg" alt="Enjo Logo" height="35px"></div>
+        Enjo <span>Constructions</span>
+      </a>
+      <ul class="nav-links" id="nav-links" role="menubar">
+        <li><a href="index.html" role="menuitem">Home</a></li>
+        <li><a href="plans.html" role="menuitem" aria-current="page">Floor Plans</a></li>
+        <li><a href="blog.html" role="menuitem">Tips &amp; Blog</a></li>
+        <li><a href="about.html" role="menuitem">About</a></li>
+        <li><a href="contact.html" role="menuitem">Contact</a></li>
+        <li class="mobile-only" role="none">
+          <a href="contact.html" class="btn btn-primary nav-cta-drawer" role="menuitem">Get Free Quote</a>
+        </li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary btn-sm nav-cta">Get Free Quote</a>
+      <button class="hamburger" id="hamburger" aria-label="Open mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <header class="page-hero">
+    <div class="container">
+      <span class="section-label" style="background:rgba(255,255,255,0.15);color:var(--white);">Browse &amp; Filter</span>
+      <h1>Floor Plans &amp; Designs</h1>
+      <p>Affordable, practical housing designs built for Ugandan homeowners and builders — from starter homes to executive builds.</p>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="section" style="padding-top:50px;">
+    <div class="container">
+
+      <!-- Filter Bar -->
+      <div class="filter-bar" id="filter-bar" role="search" aria-label="Filter floor plans">
+        <div class="filter-group">
+          <label for="filter-beds"><i class="fas fa-bed"></i> Bedrooms</label>
+          <select id="filter-beds" onchange="applyFilters()" aria-label="Filter by bedrooms">
+            <option value="all">All Bedrooms</option>
+            <option value="1">1 Bedroom</option>
+            <option value="2">2 Bedrooms</option>
+            <option value="3">3 Bedrooms</option>
+            <option value="4">4+ Bedrooms</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filter-budget"><i class="fas fa-coins"></i> Budget (UGX)</label>
+          <select id="filter-budget" onchange="applyFilters()" aria-label="Filter by budget">
+            <option value="all">Any Budget</option>
+            <option value="0-14000000">Under 15M – Starter</option>
+            <option value="14000001-30000000">15M – 30M – Affordable</option>
+            <option value="30000001-55000000">30M – 55M – Mid-Range</option>
+            <option value="55000001-100000000">55M – 100M – Premium</option>
+            <option value="100000001-999999999">Above 100M – Luxury</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filter-type"><i class="fas fa-building"></i> House Type</label>
+          <select id="filter-type" onchange="applyFilters()" aria-label="Filter by house type">
+            <option value="all">All Types</option>
+            <option value="bungalow">Bungalow</option>
+            <option value="semi-detached">Semi-Detached</option>
+            <option value="storey">Storey Building</option>
+          </select>
+        </div>
+        <button class="btn btn-green btn-sm"
+          onclick="document.getElementById('filter-beds').value='all';document.getElementById('filter-budget').value='all';document.getElementById('filter-type').value='all';applyFilters();"
+          id="reset-filters" aria-label="Reset all filters">
+          <i class="fas fa-rotate-left"></i> Reset
+        </button>
+      </div>
+
+      <!-- Loading Indicator -->
+      <div id="plans-loader" class="loading-indicator-container" style="display:none;">
+        <div class="loader-spinner"></div>
+        <p>Loading floor plans…</p>
+      </div>
+
+      <!-- Plans Grid -->
+      <!-- data-price = mid-point price in UGX for filter matching -->
+      <div class="plans-page-grid" id="plans-grid" role="list">
+
+        <!-- ═══════════════════════════════════════════════
+             STARTER TIER: Under 15M  (UGX 8M – 14M)
+        ═══════════════════════════════════════════════ -->
+
+        <!-- Plan 1: 1BR Starter Bungalow -->
+        <article class="plan-card reveal" role="listitem"
+          data-beds="1" data-type="bungalow" data-price="11000000" id="plan-card-1br">
+          <div class="card-img-wrap">
+            <img src="assets/images/floorplan_1br.png" alt="1-Bedroom Starter Floor Plan" class="card-img" loading="lazy" />
+            <span class="card-type">Bungalow</span>
+          </div>
+          <div class="card-body">
+            <div class="card-title">1BR Starter Home</div>
+            <div class="card-price-range">UGX 8M – 14M</div>
+            <div class="card-specs">
+              <div class="spec"><i class="fas fa-bed"></i> 1 Bedroom</div>
+              <div class="spec"><i class="fas fa-expand"></i> 35 sqm</div>
+              <div class="spec"><i class="fas fa-toilet"></i> 1 Bath</div>
+              <div class="spec"><i class="fas fa-layer-group"></i> Strip Found.</div>
+            </div>
+            <button class="btn btn-primary btn-sm" style="width:100%;" id="view-plan-1br"
+              onclick="openPlanModal({
+                img:'assets/images/floorplan_1br.png',
+                title:'1BR Starter Home – 35 sqm',
+                price:'UGX 8M – 14M',
+                beds:1, size:35,
+                foundation:'Strip Foundation',
+                type:'Bungalow',
+                desc:'A compact, efficient starter home ideal for a young couple or individual. Built for Uganda\'s affordable market, this design maximises every square metre with open-plan living and a covered veranda. Perfect for plots in peri-urban areas of Kampala and surrounding districts.'
+              })">View Details &amp; Floor Plan</button>
+          </div>
+        </article>
+
+        <!-- ═══════════════════════════════════════════════
+             AFFORDABLE TIER: 15M – 30M
+        ═══════════════════════════════════════════════ -->
+
+        <!-- Plan 2: Low-Cost 2BR Bungalow – 45 sqm -->
+        <article class="plan-card reveal reveal-d1" role="listitem"
+          data-beds="2" data-type="bungalow" data-price="21500000" id="plan-card-2br-lowcost">
+          <div class="card-img-wrap">
+            <img src="assets/images/floorplan_2br.png" alt="Low-Cost 2-Bedroom Bungalow Floor Plan" class="card-img" loading="lazy" />
+            <span class="card-type">Bungalow</span>
+          </div>
+          <div class="card-body">
+            <div class="card-title">Budget 2BR Bungalow</div>
+            <div class="card-price-range">UGX 18M – 25M</div>
+            <div class="card-specs">
+              <div class="spec"><i class="fas fa-bed"></i> 2 Bedrooms</div>
+              <div class="spec"><i class="fas fa-expand"></i> 45 sqm</div>
+              <div class="spec"><i class="fas fa-toilet"></i> 1 Bath</div>
+              <div class="spec"><i class="fas fa-layer-group"></i> Raft Found.</div>
+            </div>
+            <button class="btn btn-primary btn-sm" style="width:100%;" id="view-plan-2br-lc"
+              onclick="openPlanModal({
+                img:'assets/images/floorplan_2br.png',
+                title:'Budget 2BR Bungalow – 45 sqm',
+                price:'UGX 18M – 25M',
+                beds:2, size:45,
+                foundation:'Raft Foundation',
+                type:'Bungalow',
+                desc:'An accessible design for growing families on a tight budget. The open-plan kitchen-dining area creates a spacious feel despite the compact footprint. Raft foundation recommended for clay-heavy soils common in Wakiso and Mukono districts. Comes with a full materials list.'
+              })">View Details &amp; Floor Plan</button>
+          </div>
+        </article>
+
+        <!-- Plan 3: Modern 2BR Home – 60 sqm -->
+        <article class="plan-card reveal reveal-d2" role="listitem"
+          data-beds="2" data-type="bungalow" data-price="29000000" id="plan-card-2br-modern">
+          <div class="card-img-wrap">
+            <img src="assets/images/house_2br_modern.png" alt="Modern 2-Bedroom Home" class="card-img" loading="lazy" />
+            <span class="card-type">Bungalow</span>
+          </div>
+          <div class="card-body">
+            <div class="card-title">Modern 2BR Home</div>
+            <div class="card-price-range">UGX 25M – 33M</div>
+            <div class="card-specs">
+              <div class="spec"><i class="fas fa-bed"></i> 2 Bedrooms</div>
+              <div class="spec"><i class="fas fa-expand"></i> 60 sqm</div>
+              <div class="spec"><i class="fas fa-toilet"></i> 2 Baths</div>
+              <div class="spec"><i class="fas fa-layer-group"></i> Strip Found.</div>
+            </div>
+            <button class="btn btn-primary btn-sm" style="width:100%;" id="view-plan-2br-m"
+              onclick="openPlanModal({
+                img:'assets/images/house_2br_modern.png',
+                title:'Modern 2BR Home – 60 sqm',
+                price:'UGX 25M – 33M',
+                beds:2, size:60,
+                foundation:'Strip Foundation',
+                type:'Bungalow',
+                desc:'A stylish step-up design blending contemporary African aesthetics with practical living. Features a master bedroom with en-suite, open living-dining, and a front porch. Ideal for urban plots in Kampala, Entebbe, and Jinja. Available with optional solar panel provisions.'
+              })">View Details &amp; Floor Plan</button>
+          </div>
+        </article>
+
+        <!-- ═══════════════════════════════════════════════
+             MID-RANGE TIER: 30M – 55M
+        ═══════════════════════════════════════════════ -->
+
+        <!-- Plan 4: 3BR Bungalow – 90 sqm (Most Popular) -->
+        <article class="plan-card reveal" role="listitem"
+          data-beds="3" data-type="bungalow" data-price="40000000" id="plan-card-3br-bungalow">
+          <div class="card-img-wrap">
+            <img src="assets/images/house_3br_bungalow.png" alt="3-Bedroom Bungalow" class="card-img" loading="lazy" />
+            <span class="card-type" style="background:var(--orange);">Most Popular</span>
+          </div>
+          <div class="card-body">
+            <div class="card-title">3BR Family Bungalow</div>
+            <div class="card-price-range">UGX 35M – 45M</div>
+            <div class="card-specs">
+              <div class="spec"><i class="fas fa-bed"></i> 3 Bedrooms</div>
+              <div class="spec"><i class="fas fa-expand"></i> 90 sqm</div>
+              <div class="spec"><i class="fas fa-toilet"></i> 2 Baths</div>
+              <div class="spec"><i class="fas fa-layer-group"></i> Strip Found.</div>
+            </div>
+            <button class="btn btn-primary btn-sm" style="width:100%;" id="view-plan-3br"
+              onclick="openPlanModal({
+                img:'assets/images/house_3br_bungalow.png',
+                title:'3BR Family Bungalow – 90 sqm',
+                price:'UGX 35M – 45M',
+                beds:3, size:90,
+                foundation:'Strip Foundation',
+                type:'Bungalow',
+                desc:'Our most popular design – the ideal family home for the Ugandan middle class. Includes a master with en-suite, two children\'s rooms, spacious lounge, kitchen with pantry, dining area, and a 6m veranda. All rooms have natural cross-ventilation. Proven across 50+ builds in central Uganda.'
+              })">View Details &amp; Floor Plan</button>
+          </div>
+        </article>
+
+        <!-- Plan 5: 2BR Modern Bungalow – 70 sqm (mid-range alternative) -->
+        <article class="plan-card reveal reveal-d1" role="listitem"
+          data-beds="2" data-type="bungalow" data-price="38000000" id="plan-card-2br-mid">
+          <div class="card-img-wrap">
+            <img src="assets/images/2-br_bgl.png" alt="2-Bedroom Modern Bungalow" class="card-img" loading="lazy" />
+            <span class="card-type">Bungalow</span>
+          </div>
+          <div class="card-body">
+            <div class="card-title">2BR Modern Bungalow</div>
+            <div class="card-price-range">UGX 33M – 43M</div>
+            <div class="card-specs">
+              <div class="spec"><i class="fas fa-bed"></i> 2 Bedrooms</div>
+              <div class="spec"><i class="fas fa-expand"></i> 70 sqm</div>
+              <div class="spec"><i class="fas fa-toilet"></i> 2 Baths</div>
+              <div class="spec"><i class="fas fa-layer-group"></i> Strip Found.</div>
+            </div>
+            <button class="btn btn-primary btn-sm" style="width:100%;" id="view-plan-2br-mid"
+              onclick="openPlanModal({
+                img:'assets/images/2-br_bgl.png',
+                title:'2BR Modern Bungalow – 70 sqm',
+                price:'UGX 33M – 43M',
+                beds:2, size:70,
+                foundation:'Strip Foundation',
+                type:'Bungalow',
+                desc:'A spacious 2-bedroom bungalow with a premium finish. Larger than the budget option, this design features a walk-in wardrobe in the master, a dedicated dining room separate from the kitchen, and a wide front veranda. Perfect for professional couples or small families on a mid-range budget.'
+              })">View Details &amp; Floor Plan</button>
+          </div>
+        </article>
+
+        <!-- Plan 6: Executive 3BR – 110 sqm -->
+        <article class="plan-card reveal reveal-d2" role="listitem"
+          data-beds="3" data-type="bungalow" data-price="55000000" id="plan-card-3br-exec">
+          <div class="card-img-wrap">
+            <img src="assets/images/floorplan_3br.png" alt="Executive 3-Bedroom Bungalow Plan" class="card-img" loading="lazy" />
+            <span class="card-type">Bungalow</span>
+          </div>
+          <div class="card-body">
+            <div class="card-title">Executive 3BR Bungalow</div>
+            <div class="card-price-range">UGX 50M – 60M</div>
+            <div class="card-specs">
+              <div class="spec"><i class="fas fa-bed"></i> 3 Bedrooms</div>
+              <div class="spec"><i class="fas fa-expand"></i> 110 sqm</div>
+              <div class="spec"><i class="fas fa-toilet"></i> 2 Baths</div>
+              <div class="spec"><i class="fas fa-layer-group"></i> Pad Found.</div>
+            </div>
+            <button class="btn btn-primary btn-sm" style="width:100%;" id="view-plan-3br-exec"
+              onclick="openPlanModal({
+                img:'assets/images/floorplan_3br.png',
+                title:'Executive 3BR Bungalow – 110 sqm',
+                price:'UGX 50M – 60M',
+                beds:3, size:110,
+                foundation:'Pad Foundation',
+                type:'Bungalow',
+                desc:'A premium bungalow for the discerning Ugandan homeowner. This spacious design features a large master suite, dedicated study room, modern kitchen, double garage provisions, and a wide wraparound veranda. Finished with ceramic tiles, plasterboard ceilings, and aluminium windows.'
+              })">View Details &amp; Floor Plan</button>
+          </div>
+        </article>
+
+        <!-- ═══════════════════════════════════════════════
+             PREMIUM TIER: 55M – 100M
+        ═══════════════════════════════════════════════ -->
+
+        <!-- Plan 7: 4BR Family Bungalow – 120 sqm -->
+        <article class="plan-card reveal" role="listitem"
+          data-beds="4" data-type="bungalow" data-price="75000000" id="plan-card-4br">
+          <div class="card-img-wrap">
+            <img src="assets/images/floorplan_4br.png" alt="4-Bedroom Family Home Floor Plan" class="card-img" loading="lazy" />
+            <span class="card-type">Bungalow</span>
+          </div>
+          <div class="card-body">
+            <div class="card-title">4BR Family Home</div>
+            <div class="card-price-range">UGX 65M – 85M</div>
+            <div class="card-specs">
+              <div class="spec"><i class="fas fa-bed"></i> 4 Bedrooms</div>
+              <div class="spec"><i class="fas fa-expand"></i> 120 sqm</div>
+              <div class="spec"><i class="fas fa-toilet"></i> 3 Baths</div>
+              <div class="spec"><i class="fas fa-layer-group"></i> Pad Found.</div>
+            </div>
+            <button class="btn btn-primary btn-sm" style="width:100%;" id="view-plan-4br"
+              onclick="openPlanModal({
+                img:'assets/images/floorplan_4br.png',
+                title:'4BR Family Home – 120 sqm',
+                price:'UGX 65M – 85M',
+                beds:4, size:120,
+                foundation:'Pad Foundation',
+                type:'Bungalow',
+                desc:'The ultimate family bungalow. Four generous bedrooms including a master suite, open-plan family room, dedicated dining, fully fitted kitchen, 2 full bathrooms plus a guest toilet, and a domestic quarters option. Designed for large plots in Kampala suburbs, Gayaza, Wakiso, and Mukono.'
+              })">View Details &amp; Floor Plan</button>
+          </div>
+        </article>
+
+        <!-- Plan 8: 4BR Two-Storey – 140 sqm -->
+        <article class="plan-card reveal reveal-d1" role="listitem"
+          data-beds="4" data-type="storey" data-price="82500000" id="plan-card-storey-4br">
+          <div class="card-img-wrap">
+            <img src="assets/images/house_storey_semi.png" alt="4-Bedroom Two-Storey Home" class="card-img" loading="lazy" />
+            <span class="card-type" style="background:rgba(193,68,14,0.9);">Premium</span>
+          </div>
+          <div class="card-body">
+            <div class="card-title">4BR Two-Storey Home</div>
+            <div class="card-price-range">UGX 70M – 95M</div>
+            <div class="card-specs">
+              <div class="spec"><i class="fas fa-bed"></i> 4 Bedrooms</div>
+              <div class="spec"><i class="fas fa-expand"></i> 140 sqm</div>
+              <div class="spec"><i class="fas fa-toilet"></i> 3 Baths</div>
+              <div class="spec"><i class="fas fa-layer-group"></i> Raft Found.</div>
+            </div>
+            <button class="btn btn-primary btn-sm" style="width:100%;" id="view-plan-4br-storey"
+              onclick="openPlanModal({
+                img:'assets/images/house_storey_semi.png',
+                title:'4BR Two-Storey Home – 140 sqm',
+                price:'UGX 70M – 95M',
+                beds:4, size:140,
+                foundation:'Raft Foundation',
+                type:'Storey Building',
+                desc:'A commanding two-storey home designed for urban Ugandan plots. Ground floor features open living, dining, kitchen, and a guest room. Upper floor has master en-suite plus 3 bedrooms and a family bathroom. Perfect for narrow plots where vertical space is the solution. Full structural drawings included.'
+              })">View Details &amp; Floor Plan</button>
+          </div>
+        </article>
+
+        <!-- Plan 9: 3BR Modern Bungalow – 3-br_bgl image variant -->
+        <article class="plan-card reveal reveal-d2" role="listitem"
+          data-beds="3" data-type="bungalow" data-price="78000000" id="plan-card-3br-premium">
+          <div class="card-img-wrap">
+            <img src="assets/images/3-br_bgl.png" alt="Premium 3-Bedroom Bungalow" class="card-img" loading="lazy" />
+            <span class="card-type">Bungalow</span>
+          </div>
+          <div class="card-body">
+            <div class="card-title">Premium 3BR Bungalow</div>
+            <div class="card-price-range">UGX 70M – 85M</div>
+            <div class="card-specs">
+              <div class="spec"><i class="fas fa-bed"></i> 3 Bedrooms</div>
+              <div class="spec"><i class="fas fa-expand"></i> 130 sqm</div>
+              <div class="spec"><i class="fas fa-toilet"></i> 2 Baths</div>
+              <div class="spec"><i class="fas fa-layer-group"></i> Pad Found.</div>
+            </div>
+            <button class="btn btn-primary btn-sm" style="width:100%;" id="view-plan-3br-premium"
+              onclick="openPlanModal({
+                img:'assets/images/3-br_bgl.png',
+                title:'Premium 3BR Bungalow – 130 sqm',
+                price:'UGX 70M – 85M',
+                beds:3, size:130,
+                foundation:'Pad Foundation',
+                type:'Bungalow',
+                desc:'An upmarket 3-bedroom design combining generous living space with modern finishes. Features an extra-large master suite, open-plan kitchen with island counter, spacious lounge, covered carport, and lush garden frontage. Ideal for executive residential estates in Kampala and Entebbe.'
+              })">View Details &amp; Floor Plan</button>
+          </div>
+        </article>
+
+        <!-- Plan 10: Semi-Detached 4BR – 160 sqm -->
+        <article class="plan-card reveal" role="listitem"
+          data-beds="4" data-type="semi-detached" data-price="90000000" id="plan-card-semi">
+          <div class="card-img-wrap">
+            <img src="assets/images/morden_two_storey1.png" alt="Semi-Detached 4-Bedroom Home" class="card-img" loading="lazy" />
+            <span class="card-type">Semi-Detached</span>
+          </div>
+          <div class="card-body">
+            <div class="card-title">Semi-Detached 4BR</div>
+            <div class="card-price-range">UGX 80M – 100M</div>
+            <div class="card-specs">
+              <div class="spec"><i class="fas fa-bed"></i> 4 Bedrooms</div>
+              <div class="spec"><i class="fas fa-expand"></i> 160 sqm</div>
+              <div class="spec"><i class="fas fa-toilet"></i> 2 Baths</div>
+              <div class="spec"><i class="fas fa-layer-group"></i> Raft Found.</div>
+            </div>
+            <button class="btn btn-primary btn-sm" style="width:100%;" id="view-plan-semi"
+              onclick="openPlanModal({
+                img:'assets/images/morden_two_storey1.png',
+                title:'Semi-Detached 4BR – 160 sqm',
+                price:'UGX 80M – 100M',
+                beds:4, size:160,
+                foundation:'Raft Foundation',
+                type:'Semi-Detached',
+                desc:'Two mirror-image family units side by side – ideal for developers or extended families. Each unit has 2 bedrooms, living room, kitchen, and bathroom. Excellent investment property for rental income in Kampala suburbs. Build both units together for significant shared-wall cost savings.'
+              })">View Details &amp; Floor Plan</button>
+          </div>
+        </article>
+
+        <!-- ═══════════════════════════════════════════════
+             LUXURY TIER: Above 100M
+        ═══════════════════════════════════════════════ -->
+
+        <!-- Plan 11: 5BR Luxury Storey – 200 sqm -->
+        <article class="plan-card reveal reveal-d1" role="listitem"
+          data-beds="4" data-type="storey" data-price="130000000" id="plan-card-5br-luxury">
+          <div class="card-img-wrap">
+            <img src="assets/images/house_storey_semi.png" alt="Luxury Two-Storey Home" class="card-img" loading="lazy" />
+            <span class="card-type" style="background:var(--orange);">Luxury</span>
+          </div>
+          <div class="card-body">
+            <div class="card-title">Luxury 5BR Storey Villa</div>
+            <div class="card-price-range">UGX 110M – 150M</div>
+            <div class="card-specs">
+              <div class="spec"><i class="fas fa-bed"></i> 5 Bedrooms</div>
+              <div class="spec"><i class="fas fa-expand"></i> 200 sqm</div>
+              <div class="spec"><i class="fas fa-toilet"></i> 4 Baths</div>
+              <div class="spec"><i class="fas fa-layer-group"></i> Raft Found.</div>
+            </div>
+            <button class="btn btn-primary btn-sm" style="width:100%;" id="view-plan-luxury"
+              onclick="openPlanModal({
+                img:'assets/images/house_storey_semi.png',
+                title:'Luxury 5BR Storey Villa – 200 sqm',
+                price:'UGX 110M – 150M',
+                beds:5, size:200,
+                foundation:'Raft Foundation',
+                type:'Storey Building',
+                desc:'A prestige two-storey villa designed for top-tier living in Uganda. Ground floor: grand reception, formal lounge, dining, fully-fitted kitchen, guest suite, and utility room. Upper floor: 4 bedrooms, all en-suite, plus a family lounge/TV room. Features a double garage, manicured compound, swimming pool provisions, and 24-hour backup power system.'
+              })">View Details &amp; Floor Plan</button>
+          </div>
+        </article>
+
+        <!-- No results message -->
+        <div class="no-results" id="no-results">
+          <i class="fas fa-search"></i>
+          <h3>No designs match your filters</h3>
+          <p>Try adjusting your budget range or <button onclick="document.getElementById('reset-filters').click()"
+              style="color:var(--orange);background:none;border:none;font-size:inherit;cursor:pointer;font-weight:600;padding:0;">reset all filters</button>.</p>
+        </div>
+
+      </div><!-- end plans-grid -->
+
+      <!-- CTA Banner -->
+      <div style="background:linear-gradient(135deg,var(--green-dark),var(--green-mid));border-radius:var(--radius-lg);padding:40px 30px;text-align:center;margin-top:60px;color:var(--white);">
+        <h3 style="color:var(--white);margin-bottom:12px;font-size:1.4rem;">Can't find the right design?</h3>
+        <p style="color:rgba(255,255,255,0.8);margin-bottom:24px;">Tell us your budget, plot size, and needs – we'll
+          recommend the best design for you, free of charge.</p>
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+          <a href="https://wa.me/256757105857?text=Hi%2C%20I%20need%20help%20finding%20the%20right%20house%20design%20for%20my%20budget."
+            class="btn btn-wa" id="custom-plan-wa" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i> Ask for a Custom Plan
+          </a>
+          <a href="contact.html" class="btn btn-secondary" id="custom-plan-contact">
+            <i class="fas fa-envelope"></i> Send a Message
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- PLAN DETAIL MODAL -->
+  <div class="modal-overlay" id="plan-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+      <div class="modal-close">
+        <button id="modal-close-btn" aria-label="Close modal"><i class="fas fa-times"></i></button>
+      </div>
+      <img id="modal-img" src="" alt="" class="modal-img" />
+      <div class="modal-body">
+        <h2 class="modal-title" id="modal-title"></h2>
+        <div class="modal-price" id="modal-price"></div>
+        <div class="modal-specs">
+          <div class="modal-spec">
+            <i class="fas fa-bed"></i>
+            <div class="spec-label">Bedrooms</div>
+            <div class="spec-val" id="modal-beds"></div>
+          </div>
+          <div class="modal-spec">
+            <i class="fas fa-expand"></i>
+            <div class="spec-label">Floor Area</div>
+            <div class="spec-val" id="modal-size"></div>
+          </div>
+          <div class="modal-spec">
+            <i class="fas fa-layer-group"></i>
+            <div class="spec-label">Foundation</div>
+            <div class="spec-val" id="modal-found"></div>
+          </div>
+          <div class="modal-spec">
+            <i class="fas fa-building"></i>
+            <div class="spec-label">House Type</div>
+            <div class="spec-val" id="modal-type"></div>
+          </div>
+        </div>
+        <p class="modal-desc" id="modal-desc"></p>
+        <div class="modal-actions">
+          <a href="https://wa.me/256757105857?text=Hi%2C%20I'm%20interested%20in%20this%20floor%20plan%20from%20your%20website."
+            class="btn btn-wa" id="modal-wa-btn" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i> Inquire on WhatsApp
+          </a>
+          <a href="contact.html" class="btn btn-outline" id="modal-contact-btn">
+            <i class="fas fa-envelope"></i> Send Message
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer id="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="logo-icon">🏗️</div> Enjo Constructions
+        </div>
+        <p>Making quality home design accessible to every Ugandan. Smart, local, affordable construction solutions.</p>
+        <div class="footer-social">
+          <a href="https://www.tiktok.com/@enjoconstructions" aria-label="TikTok" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
+          <a href="https://wa.me/256757105857" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="plans.html">Floor Plans</a></li>
+          <li><a href="blog.html">Tips &amp; Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>House Types</h4>
+        <ul>
+          <li><a href="plans.html?beds=1">1BR Starter Homes</a></li>
+          <li><a href="plans.html?beds=2">2BR Modern Homes</a></li>
+          <li><a href="plans.html?type=bungalow&beds=3">3BR Bungalows</a></li>
+          <li><a href="plans.html?beds=4">4BR Family Homes</a></li>
+          <li><a href="plans.html?type=storey">Storey Buildings</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <ul>
+          <li><a href="https://wa.me/256757105857" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp" style="color:#25d366"></i> +256 757 105857</a></li>
+          <li><a href="mailto:enjoconstruction@gmail.com">
+            <i class="fas fa-envelope" style="color:var(--orange)"></i> enjoconstruction@gmail.com</a></li>
+          <li style="color:rgba(255,255,255,0.55);font-size:0.88rem;display:flex;align-items:center;gap:8px;">
+            <i class="fas fa-map-marker-alt" style="color:var(--terracotta)"></i> Kampala, Uganda</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Enjo Constructions. All rights reserved.</span>
+      <span>Made with ❤️ for <a href="#">Ugandan homebuilders</a></span>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/256757105857" class="wa-float" aria-label="WhatsApp" id="wa-float"
+    target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

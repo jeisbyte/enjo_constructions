@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Construction Tips Blog – Enjo Constructions Uganda</title>
+  <meta name="description" content="Practical Ugandan construction tips: save money on cement, foundation advice for clay soils, roofing options, permits, and more from local experts." />
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .blog-hero-mini {
+      background: linear-gradient(135deg, var(--terracotta) 0%, var(--orange) 100%);
+    }
+    .blog-card-img-placeholder.mat  { background: linear-gradient(135deg, #d8f3dc, #b7e4c7); }
+    .blog-card-img-placeholder.lab  { background: linear-gradient(135deg, #fef3c7, #fde68a); }
+    .blog-card-img-placeholder.des  { background: linear-gradient(135deg, #dbeafe, #bfdbfe); }
+    .blog-card-img-placeholder.per  { background: linear-gradient(135deg, #fce7f3, #fbcfe8); }
+    .blog-card-img-placeholder.fin  { background: linear-gradient(135deg, #e0e7ff, #c7d2fe); }
+    .featured-post {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 0;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 50px;
+    }
+    .featured-post img { width: 100%; height: 100%; object-fit: cover; min-height: 320px; }
+    .featured-post-body { padding: 40px; display: flex; flex-direction: column; justify-content: center; gap: 14px; }
+    .featured-post-body .featured-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--orange); }
+    .featured-post-body h2 { font-size: 1.5rem; color: var(--green-dark); line-height: 1.35; }
+    .featured-post-body p { color: var(--text-muted); font-size: 0.92rem; line-height: 1.7; }
+    .featured-post-body .meta { font-size: 0.8rem; color: var(--text-muted); display: flex; gap: 14px; }
+    @media (max-width: 768px) {
+      .featured-post { grid-template-columns: 1fr; }
+      .featured-post img { min-height: 220px; }
+      .featured-post-body { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar always-dark scrolled" id="navbar" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Enjo Constructions Home">
+        <div class="logo-icon"><img src="assets/images/logo.svg" alt="Enjo Logo" height="35px"></div>
+        Enjo <span>Constructions</span>
+      </a>
+      <ul class="nav-links" id="nav-links" role="menubar">
+        <li><a href="index.html" role="menuitem">Home</a></li>
+        <li><a href="plans.html" role="menuitem">Floor Plans</a></li>
+        <li><a href="blog.html" role="menuitem" aria-current="page">Tips &amp; Blog</a></li>
+        <li><a href="about.html" role="menuitem">About</a></li>
+        <li><a href="contact.html" role="menuitem">Contact</a></li>
+        <li class="mobile-only" role="none"><a href="contact.html" class="btn btn-primary nav-cta-drawer" role="menuitem">Get Free Quote</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary btn-sm nav-cta">Get Free Quote</a>
+      <button class="hamburger" id="hamburger" aria-label="Open mobile menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <header class="page-hero blog-hero-mini">
+    <div class="container">
+      <span class="section-label" style="background:rgba(255,255,255,0.2);color:var(--white);">Practical Knowledge</span>
+      <h1>Construction Tips & Blog</h1>
+      <p>Local, honest advice that saves Ugandan builders real money on every project.</p>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="section" style="padding-top:50px;">
+    <div class="container">
+
+      <!-- Featured Post -->
+      <article class="featured-post reveal" id="featured-post">
+        <img src="assets/images/house_3br_bungalow.png" alt="Save money building in Uganda" loading="eager" />
+        <div class="featured-post-body">
+          <span class="featured-label">⭐ Featured Article</span>
+          <h2>The Complete Guide to Building a House in Uganda for Under UGX 50M</h2>
+          <p>Everything a first-time builder needs to know — from land title checks, choosing the right contractor, bulk materials buying in Kampala, to avoiding the 5 most expensive mistakes.</p>
+          <div class="meta">
+            <span><i class="fas fa-calendar"></i> June 2025</span>
+            <span><i class="fas fa-clock"></i> 12 min read</span>
+            <span class="tag">Materials</span>
+          </div>
+          <a href="#" class="btn btn-primary btn-sm" id="read-featured" style="align-self:flex-start;">Read Full Guide →</a>
+        </div>
+      </article>
+
+      <!-- Search & Filters -->
+      <div class="blog-controls reveal" id="blog-controls">
+        <div class="search-box" role="search">
+          <i class="fas fa-search" aria-hidden="true"></i>
+          <input type="text" id="blog-search" placeholder="Search articles…" aria-label="Search articles" />
+        </div>
+        <div class="category-tags" role="group" aria-label="Filter by category">
+          <button class="cat-tag active" data-cat="all" id="cat-all">All</button>
+          <button class="cat-tag" data-cat="materials" id="cat-materials">Materials</button>
+          <button class="cat-tag" data-cat="labour" id="cat-labour">Labour</button>
+          <button class="cat-tag" data-cat="design" id="cat-design">Design</button>
+          <button class="cat-tag" data-cat="permits" id="cat-permits">Permits</button>
+          <button class="cat-tag" data-cat="finance" id="cat-finance">Finance</button>
+        </div>
+      </div>
+
+      <!-- Loading Indicator -->
+      <div id="blog-loader" class="loading-indicator-container" style="display:none;">
+        <div class="loader-spinner"></div>
+        <p>Loading articles...</p>
+      </div>
+
+      <!-- Blog Grid -->
+      <div class="blog-grid" id="blog-grid" role="list">
+
+        <article class="blog-card reveal" role="listitem" data-title="how to save 20% on cement in kampala" data-cat="materials" id="post-cement">
+          <div class="blog-card-img-placeholder mat" style="display:flex;align-items:center;justify-content:center;font-size:3rem;">🏗️</div>
+          <div class="blog-card-body">
+            <span class="blog-card-cat">Materials</span>
+            <h3>How to Save 20% on Cement in Kampala</h3>
+            <p>Bulk buying strategies, the right season to buy, and which brands give you the best value per bag in the Kampala market right now.</p>
+          </div>
+          <div class="blog-card-footer">
+            <span><i class="fas fa-calendar"></i> May 2025</span>
+            <a href="#" class="read-more-link" id="read-cement">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="blog-card reveal reveal-d1" role="listitem" data-title="foundation tips for clay soils in uganda" data-cat="design" id="post-clay">
+          <div class="blog-card-img-placeholder des" style="display:flex;align-items:center;justify-content:center;font-size:3rem;">⛏️</div>
+          <div class="blog-card-body">
+            <span class="blog-card-cat">Design</span>
+            <h3>Foundation Tips for Uganda's Clay Soils</h3>
+            <p>Clay-rich soils in Wakiso, Mukono, and Kampala require special attention. A structural engineer explains when to use raft vs strip vs pad foundations.</p>
+          </div>
+          <div class="blog-card-footer">
+            <span><i class="fas fa-calendar"></i> May 2025</span>
+            <a href="#" class="read-more-link" id="read-clay">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="blog-card reveal reveal-d2" role="listitem" data-title="roofing options under ugx 5m" data-cat="materials" id="post-roof">
+          <div class="blog-card-img-placeholder lab" style="display:flex;align-items:center;justify-content:center;font-size:3rem;">🏠</div>
+          <div class="blog-card-body">
+            <span class="blog-card-cat">Materials</span>
+            <h3>Roofing Options Under UGX 5M</h3>
+            <p>Iron sheets, clay tiles, or pre-painted steel? We compare real prices from Kampala markets plus pros and cons for Uganda's tropical climate.</p>
+          </div>
+          <div class="blog-card-footer">
+            <span><i class="fas fa-calendar"></i> April 2025</span>
+            <a href="#" class="read-more-link" id="read-roof">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="blog-card reveal" role="listitem" data-title="how to get a building permit in kampala 2025" data-cat="permits" id="post-permit">
+          <div class="blog-card-img-placeholder per" style="display:flex;align-items:center;justify-content:center;font-size:3rem;">📋</div>
+          <div class="blog-card-body">
+            <span class="blog-card-cat">Permits</span>
+            <h3>How to Get a Building Permit in Kampala (2025 Guide)</h3>
+            <p>Step-by-step walkthrough of KCCA building permit requirements, required documents, fees, and how to avoid costly delays.</p>
+          </div>
+          <div class="blog-card-footer">
+            <span><i class="fas fa-calendar"></i> April 2025</span>
+            <a href="#" class="read-more-link" id="read-permit">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="blog-card reveal reveal-d1" role="listitem" data-title="hiring reliable construction labour in uganda" data-cat="labour" id="post-labour">
+          <div class="blog-card-img-placeholder lab" style="display:flex;align-items:center;justify-content:center;font-size:3rem;">👷</div>
+          <div class="blog-card-body">
+            <span class="blog-card-cat">Labour</span>
+            <h3>How to Hire Reliable Construction Labour in Uganda</h3>
+            <p>Warning signs to watch for, fair daily rates for fundi, mason, and labourer in 2025, and how to structure a contract that protects you.</p>
+          </div>
+          <div class="blog-card-footer">
+            <span><i class="fas fa-calendar"></i> March 2025</span>
+            <a href="#" class="read-more-link" id="read-labour">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="blog-card reveal reveal-d2" role="listitem" data-title="saccos and bank loans for home construction uganda" data-cat="finance" id="post-finance">
+          <div class="blog-card-img-placeholder fin" style="display:flex;align-items:center;justify-content:center;font-size:3rem;">💰</div>
+          <div class="blog-card-body">
+            <span class="blog-card-cat">Finance</span>
+            <h3>SACCOs vs Bank Loans: Best Way to Finance Your Build</h3>
+            <p>A practical comparison of SACCO home loans, bank mortgages, and diaspora remittance strategies for building in Uganda.</p>
+          </div>
+          <div class="blog-card-footer">
+            <span><i class="fas fa-calendar"></i> March 2025</span>
+            <a href="#" class="read-more-link" id="read-finance">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="blog-card reveal" role="listitem" data-title="how to buy land in uganda safely" data-cat="permits" id="post-land">
+          <div class="blog-card-img-placeholder per" style="display:flex;align-items:center;justify-content:center;font-size:3rem;">🌍</div>
+          <div class="blog-card-body">
+            <span class="blog-card-cat">Permits</span>
+            <h3>How to Buy Land in Uganda Safely – Avoid Fraud</h3>
+            <p>Red flags in land sales, verifying title deeds at Entebbe Land Registry, and why you always need a lawyer before signing anything.</p>
+          </div>
+          <div class="blog-card-footer">
+            <span><i class="fas fa-calendar"></i> February 2025</span>
+            <a href="#" class="read-more-link" id="read-land">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="blog-card reveal reveal-d1" role="listitem" data-title="top 5 design mistakes ugandan homebuilders make" data-cat="design" id="post-mistakes">
+          <div class="blog-card-img-placeholder des" style="display:flex;align-items:center;justify-content:center;font-size:3rem;">📐</div>
+          <div class="blog-card-body">
+            <span class="blog-card-cat">Design</span>
+            <h3>Top 5 Design Mistakes Ugandan Homebuilders Make</h3>
+            <p>From windows in the wrong direction to kitchens with no ventilation — the most common errors and exactly how to avoid them.</p>
+          </div>
+          <div class="blog-card-footer">
+            <span><i class="fas fa-calendar"></i> January 2025</span>
+            <a href="#" class="read-more-link" id="read-mistakes">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="blog-card reveal reveal-d2" role="listitem" data-title="labour vs contractor who to hire for your build" data-cat="labour" id="post-contractor">
+          <div class="blog-card-img-placeholder mat" style="display:flex;align-items:center;justify-content:center;font-size:3rem;">🔨</div>
+          <div class="blog-card-body">
+            <span class="blog-card-cat">Labour</span>
+            <h3>Labour vs Contractor: Who Should You Hire?</h3>
+            <p>The honest truth about when to use a contractor vs daily-paid labour — including real numbers from recent builds in Kampala.</p>
+          </div>
+          <div class="blog-card-footer">
+            <span><i class="fas fa-calendar"></i> January 2025</span>
+            <a href="#" class="read-more-link" id="read-contractor">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+      </div><!-- /blog-grid -->
+
+    </div>
+  </main>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter-section" id="newsletter">
+    <div class="container">
+      <span class="section-label" style="background:rgba(255,255,255,0.15);color:var(--white);">Free Weekly Tips</span>
+      <h2>Never Miss a Building Tip</h2>
+      <p>Join 10,000+ Ugandans getting weekly construction guides every Friday.</p>
+      <form class="newsletter-form" id="newsletter-form" novalidate>
+        <input type="email" id="newsletter-email" placeholder="Enter your email address" required aria-label="Email address" />
+        <button type="submit" id="newsletter-btn">Subscribe →</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo"><div class="logo-icon"><img src="assets/images/logo.svg" alt="Enjo Logo" height="30px"></div> Enjo Constructions</div>
+        <p>Making quality home design accessible to every Ugandan.</p>
+        <div class="footer-social">
+          <a href="https://www.tiktok.com/@enjoconstructions" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="https://wa.me/256757105857" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Quick Links</h4><ul>
+        <li><a href="index.html">Home</a></li><li><a href="plans.html">Floor Plans</a></li>
+        <li><a href="blog.html">Tips & Blog</a></li><li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Categories</h4><ul>
+        <li><a href="blog.html?cat=materials">Materials</a></li><li><a href="blog.html?cat=labour">Labour</a></li>
+        <li><a href="blog.html?cat=design">Design</a></li><li><a href="blog.html?cat=permits">Permits</a></li>
+        <li><a href="blog.html?cat=finance">Finance</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Contact Us</h4><ul>
+        <li><a href="https://wa.me/256757105857"><i class="fab fa-whatsapp" style="color:#25d366"></i> +256 757 105857</a></li>
+        <li><a href="mailto:enjoconstruction@gmail.com"><i class="fas fa-envelope" style="color:var(--orange)"></i> enjoconstruction@gmail.com</a></li>
+        <li style="color:rgba(255,255,255,0.55);font-size:0.88rem"><i class="fas fa-map-marker-alt" style="color:var(--terracotta)"></i> Kampala, Uganda</li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Enjo Constructions. All rights reserved.</span>
+      <span>Made with ❤️ for <a href="#">Ugandan homebuilders</a></span>
+    </div>
+  </footer>
+
+  <!-- BLOG ARTICLE MODAL -->
+  <div class="modal-overlay" id="blog-modal" role="dialog" aria-modal="true" aria-labelledby="blog-modal-title">
+    <div class="modal" style="max-width:820px;">
+      <div class="modal-close">
+        <button id="blog-modal-close-btn" aria-label="Close modal"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body" style="padding:20px 40px 40px;">
+        <span class="blog-card-cat" id="blog-modal-cat" style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:var(--orange);">Category</span>
+        <h2 class="modal-title" id="blog-modal-title" style="margin-top:10px; margin-bottom:15px; font-size:1.8rem; color:var(--green-dark);"></h2>
+        <div class="meta" id="blog-modal-meta" style="font-size:0.82rem; color:var(--text-muted); display:flex; gap:18px; margin-bottom:24px; border-bottom:1px solid var(--border); padding-bottom:15px;">
+          <span><i class="fas fa-calendar"></i> <span id="blog-modal-date"></span></span>
+          <span><i class="fas fa-clock"></i> <span id="blog-modal-readtime"></span></span>
+        </div>
+        <div class="modal-desc" id="blog-modal-content" style="font-size:0.96rem; line-height:1.75; color:var(--text-mid);">
+          <!-- Dynamic paragraphs populated by JS -->
+        </div>
+        <div style="margin-top:32px; border-top:1px solid var(--border); padding-top:20px; display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="https://wa.me/256757105857" class="btn btn-wa" style="padding:10px 24px; font-size:0.9rem;">
+            <i class="fab fa-whatsapp"></i> Discuss on WhatsApp
+          </a>
+          <button class="btn btn-outline" id="blog-modal-close-btn-bottom" style="padding:10px 24px; font-size:0.9rem;">Close Article</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="https://wa.me/256757105857" class="wa-float" aria-label="WhatsApp" id="wa-float"><i class="fab fa-whatsapp"></i></a>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Add category filter routing from URL query parameters
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const catParam = params.get('cat');
+      if (catParam) {
+        const tag = document.querySelector(`.cat-tag[data-cat="${catParam}"]`);
+        if (tag) {
+          document.querySelectorAll('.cat-tag').forEach(t => t.classList.remove('active'));
+          tag.classList.add('active');
+          if (typeof filterBlog === 'function') {
+            filterBlog(true);
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

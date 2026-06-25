@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us – Enjo Constructions Uganda</title>
+  <meta name="description"
+    content="Enjo Constructions was founded to make quality home design accessible to every Ugandan. Learn our story, mission, and community-first approach to affordable construction." />
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .about-page-hero {
+      background: linear-gradient(135deg, var(--green-dark) 0%, #163d29 100%);
+      padding: 130px 20px 100px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-page-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: rgba(82, 183, 136, 0.08);
+      pointer-events: none;
+    }
+
+    .about-page-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 70px;
+      background: var(--off-white);
+      clip-path: ellipse(60% 100% at 50% 100%);
+    }
+
+    .about-page-hero h1 {
+      color: var(--white);
+    }
+
+    .about-page-hero p {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 1.1rem;
+      max-width: 600px;
+    }
+
+    .about-page-hero .section-label {
+      background: rgba(255, 255, 255, 0.15);
+      color: var(--white);
+    }
+
+    /* Stats banner */
+    .stats-banner {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 36px 40px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      box-shadow: var(--shadow-md);
+      margin: -40px 0 60px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 10px;
+    }
+
+    .stat-num {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-num span {
+      color: var(--orange);
+    }
+
+    .stat-label {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .stats-banner {
+        grid-template-columns: repeat(2, 1fr);
+        margin: -20px 0 40px;
+        padding: 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .stats-banner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Mission strip */
+    .mission-strip {
+      background: linear-gradient(135deg, var(--terracotta) 0%, var(--orange) 100%);
+      color: var(--white);
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .mission-strip blockquote {
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-style: italic;
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.6;
+      color: var(--white);
+    }
+
+    .mission-strip cite {
+      display: block;
+      font-size: 0.85rem;
+      font-style: normal;
+      color: rgba(255, 255, 255, 0.75);
+      margin-top: 16px;
+    }
+
+    /* Timeline */
+    .timeline {
+      padding: 60px 0;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 24px;
+      margin-bottom: 32px;
+      align-items: start;
+    }
+
+    .timeline-year {
+      background: var(--green-dark);
+      color: var(--white);
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 10px;
+      border-radius: var(--radius-sm);
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .timeline-content {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      border-left: 4px solid var(--green-light);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .timeline-content h4 {
+      color: var(--green-dark);
+      margin-bottom: 6px;
+    }
+
+    .timeline-content p {
+      font-size: 0.88rem;
+    }
+
+    /* Platforms */
+    .platforms {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .platform-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      padding: 10px 18px;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      transition: all var(--transition);
+    }
+
+    .platform-badge:hover {
+      border-color: var(--green-mid);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .platform-badge i {
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar always-dark scrolled" id="navbar" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon"><img src="assets/images/logo.svg" alt="Enjo Logo" height="35px"></div>
+        Enjo <span>Constructions</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="plans.html">Floor Plans</a></li>
+        <li><a href="blog.html">Tips & Blog</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="mobile-only"><a href="contact.html" class="btn btn-primary nav-cta-drawer">Get Free Quote</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary btn-sm nav-cta">Get Free Quote</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- ABOUT HERO -->
+  <header class="about-page-hero">
+    <div class="container">
+      <span class="section-label">Our Story</span>
+      <h1>Building Dreams,<br>One Ugandan Home at a Time</h1>
+      <p style="margin-top:16px;">We started Enjo Constructions to make quality home design accessible to every Ugandan
+        — not just those who can afford expensive architects.</p>
+    </div>
+  </header>
+
+  <!-- STATS BANNER -->
+  <div class="container">
+    <div class="stats-banner reveal" id="stats-banner">
+      <div class="stat-item">
+        <div class="stat-num"><span data-counter data-target="10000" data-suffix="+">10,000+</span></div>
+        <div class="stat-label">Ugandans Reached</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num"><span data-counter data-target="120" data-suffix="+">120+</span></div>
+        <div class="stat-label">Designs Published</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num"><span data-counter data-target="7" data-suffix="">7</span></div>
+        <div class="stat-label">Districts Covered</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num"><span data-counter data-target="5" data-suffix="">5</span></div>
+        <div class="stat-label">Years of Service</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OUR STORY -->
+  <section class="section">
+    <div class="container">
+      <div class="about-story">
+        <div class="about-story-text reveal">
+          <span class="section-label">How We Started</span>
+          <h2 class="section-title">From Social Media to Your Building Site</h2>
+          <p>Enjo Constructions began not in an office, but on social media. We saw Ugandan families struggling with
+            overpriced, impractical home designs that didn't reflect local realities — clay soils, tropical heat, tight
+            budgets, and small urban plots.</p>
+          <p>We started sharing affordable 3D floor plans and honest construction tips on TikTok and Facebook. The
+            response was overwhelming. Thousands of Ugandans were hungry for practical, local knowledge — not textbook
+            theory from foreign design firms.</p>
+          <p>Today, Enjo Constructions is a trusted resource for homeowners, builders, and diaspora Ugandans planning to
+            build back home. We believe every Ugandan deserves a well-designed, structurally sound home — regardless of
+            budget.</p>
+
+          <div class="platforms" role="list">
+            <a href="https://www.tiktok.com/@enjoconstructions" class="platform-badge" role="listitem" aria-label="TikTok">
+              <i class="fab fa-tiktok" style="color:#000"></i> TikTok
+            </a>
+            <a href="https://wa.me/256757105857" class="platform-badge" role="listitem" aria-label="WhatsApp">
+              <i class="fab fa-whatsapp" style="color:#25d366"></i> WhatsApp
+            </a>
+          </div>
+        </div>
+        <div class="about-story-img reveal reveal-d1">
+          <img src="assets/images/about_story.svg" alt="A typical Ugandan home project by Enjo Constructions"
+            loading="lazy" />
+          <div class="img-badge">
+            <div class="num">50+</div>
+            <div class="lbl">Successful Builds Advised</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION QUOTE -->
+  <div class="mission-strip">
+    <div class="container">
+      <blockquote>
+        "No expensive architects – just smart, local solutions. We believe every Ugandan family deserves a safe,
+        beautiful home built within their means."
+      </blockquote>
+      <cite>— The Enjo Constructions Team, Kampala</cite>
+    </div>
+  </div>
+
+  <!-- OUR VALUES -->
+  <section class="section" style="background:var(--off-white);">
+    <div class="container">
+      <div class="text-center" style="margin-bottom:40px;">
+        <span class="section-label">What We Stand For</span>
+        <h2 class="section-title">Our Core Values</h2>
+      </div>
+      <div class="values-grid">
+        <div class="value-card reveal" id="value-affordable">
+          <div class="value-icon"><i class="fas fa-coins"></i></div>
+          <h3>Affordability First</h3>
+          <p>Every design and tip we share is grounded in what's actually achievable on a Ugandan budget — no
+            unrealistic price tags.</p>
+        </div>
+        <div class="value-card reveal reveal-d1" id="value-community">
+          <div class="value-icon"><i class="fas fa-users"></i></div>
+          <h3>Community First</h3>
+          <p>We grew through social media because we shared knowledge freely. Our community's trust means more than any
+            contract.</p>
+        </div>
+        <div class="value-card reveal reveal-d2" id="value-local">
+          <div class="value-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <h3>Local Expertise</h3>
+          <p>We understand Ugandan soils, climate, regulations, and markets. Our advice is tailored for Uganda — not
+            copied from foreign textbooks.</p>
+        </div>
+        <div class="value-card reveal" id="value-quality">
+          <div class="value-icon"><i class="fas fa-shield-halved"></i></div>
+          <h3>Quality Standards</h3>
+          <p>Affordable doesn't mean substandard. All our designs are structurally sound and meet Uganda National
+            Building Code standards.</p>
+        </div>
+        <div class="value-card reveal reveal-d1" id="value-transparent">
+          <div class="value-icon"><i class="fas fa-handshake"></i></div>
+          <h3>Transparency</h3>
+          <p>We give you real cost estimates, not vague figures. What you see in our price ranges is what real builders
+            are paying today.</p>
+        </div>
+        <div class="value-card reveal reveal-d2" id="value-innovation">
+          <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
+          <h3>Practical Innovation</h3>
+          <p>We combine modern 3D design technology with practical Ugandan building wisdom to deliver designs that
+            actually get built.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="section" style="background:var(--beige);">
+    <div class="container">
+      <div class="text-center" style="margin-bottom:48px;">
+        <span class="section-label">Our Journey</span>
+        <h2 class="section-title">How We Grew</h2>
+      </div>
+      <div class="timeline reveal" id="timeline" style="max-width:700px;margin:0 auto;">
+        <div class="timeline-item">
+          <div class="timeline-year">2020</div>
+          <div class="timeline-content">
+            <h4>The Beginning</h4>
+            <p>Started sharing affordable home designs on Facebook groups and WhatsApp communities across Kampala. First
+              500 followers in the first month.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2021</div>
+          <div class="timeline-content">
+            <h4>TikTok Viral Growth</h4>
+            <p>A floor plan video for a 3BR bungalow under UGX 35M reached 200,000+ views. TikTok became our biggest
+              platform overnight.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2022</div>
+          <div class="timeline-content">
+            <h4>First Consultations</h4>
+            <p>Began offering WhatsApp consultation services. Helped over 200 families choose the right design for their
+              plot and budget.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2023</div>
+          <div class="timeline-content">
+            <h4>3D Design Library</h4>
+            <p>Launched our full library of 3D floor plans. Partnered with local structural engineers to validate all
+              designs against Ugandan soil conditions.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2025</div>
+          <div class="timeline-content">
+            <h4>10,000+ Community</h4>
+            <p>Over 10,000 Ugandan homebuilders now access our weekly tips. This website launches as a permanent home
+              for all our resources.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="newsletter-section" id="about-cta">
+    <div class="container">
+      <span class="section-label" style="background:rgba(255,255,255,0.15);color:var(--white);">Get In Touch</span>
+      <h2>Ready to Start Your Build?</h2>
+      <p>Send us a WhatsApp message with your plot size and budget – we'll suggest the perfect design for you, free of
+        charge.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:8px;">
+        <a href="https://wa.me/256757105857" class="btn btn-wa" id="about-wa-cta"><i class="fab fa-whatsapp"></i> Chat
+          on WhatsApp</a>
+        <a href="contact.html" class="btn btn-secondary" id="about-contact-cta"><i class="fas fa-envelope"></i> Send a
+          Message</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="logo-icon">🏗️</div> Enjo Constructions
+        </div>
+        <p>Making quality home design accessible to every Ugandan.</p>
+        <div class="footer-social">
+          <a href="https://www.tiktok.com/@enjoconstructions" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="https://wa.me/256757105857" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="plans.html">Floor Plans</a></li>
+          <li><a href="blog.html">Tips & Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>House Types</h4>
+        <ul>
+          <li><a href="plans.html?beds=1">1BR Starter Homes</a></li>
+          <li><a href="plans.html?beds=2">2BR Modern Homes</a></li>
+          <li><a href="plans.html?type=bungalow&amp;beds=3">3BR Bungalows</a></li>
+          <li><a href="plans.html?beds=4">4BR Family Homes</a></li>
+          <li><a href="plans.html?type=storey">Storey Buildings</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <ul>
+          <li><a href="https://wa.me/256757105857"><i class="fab fa-whatsapp" style="color:#25d366"></i> +256 757 105857</a></li>
+          <li><a href="mailto:enjoconstruction@gmail.com"><i class="fas fa-envelope" style="color:var(--orange)"></i>
+              enjoconstruction@gmail.com</a></li>
+          <li style="color:rgba(255,255,255,0.55);font-size:0.88rem"><i class="fas fa-map-marker-alt"
+              style="color:var(--terracotta)"></i> Kampala, Uganda</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Enjo Constructions. All rights reserved.</span>
+      <span>Made with ❤️ for <a href="#">Ugandan homebuilders</a></span>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/256757105857" class="wa-float" aria-label="WhatsApp" id="wa-float"><i
+      class="fab fa-whatsapp"></i></a>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

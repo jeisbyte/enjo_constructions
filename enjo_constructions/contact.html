@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us – Enjo Constructions Uganda</title>
+  <meta name="description"
+    content="Get in touch with Enjo Constructions via WhatsApp, phone, or email. We're based in Kampala and serve homebuilders across Uganda." />
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- EmailJS – sends form data directly to enjoconstruction@gmail.com -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    // EmailJS public key & IDs – set up at https://www.emailjs.com/
+    // 1. Create a free account → Add "Gmail" service → note Service ID
+    // 2. Create email template with variables: {{from_name}}, {{phone}}, {{from_email}},
+    //    {{subject}}, {{message}}, {{sent_time}} → note Template ID
+    // 3. Copy your Public Key from Account → API Keys
+    // Replace the three strings below with your actual IDs:
+    (function () {
+      emailjs.init({ publicKey: 'YOUR_PUBLIC_KEY' }); // ← replace
+    })();
+    window.EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // ← replace (e.g. 'service_abc123')
+    window.EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // ← replace (e.g. 'template_xyz789')
+  </script>
+
+  <style>
+    .contact-page-hero {
+      background: linear-gradient(135deg, #163d29 0%, var(--green-dark) 60%, var(--green-mid) 100%);
+      padding: 110px 20px 90px;
+      position: relative;
+    }
+
+    .contact-page-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 70px;
+      background: var(--off-white);
+      clip-path: ellipse(60% 100% at 50% 100%);
+    }
+
+    .contact-page-hero h1 {
+      color: var(--white);
+    }
+
+    .contact-page-hero p {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 1.05rem;
+    }
+
+    /* Success message */
+    .form-success {
+      display: none;
+      background: var(--green-pale);
+      border: 1.5px solid var(--green-light);
+      border-radius: var(--radius-sm);
+      padding: 16px 20px;
+      color: var(--green-dark);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .form-success.show {
+      display: flex;
+    }
+
+    /* EmailJS setup notice (admin only) */
+    .setup-notice {
+      background: rgba(244, 130, 31, 0.08);
+      border: 1.5px solid rgba(244, 130, 31, 0.3);
+      border-radius: var(--radius-sm);
+      padding: 14px 18px;
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      margin-bottom: 20px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .setup-notice i {
+      color: var(--orange);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* FAQ section */
+    .faq-item {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      margin-bottom: 12px;
+      overflow: hidden;
+      transition: border-color var(--transition);
+    }
+
+    .faq-item:hover {
+      border-color: var(--green-light);
+    }
+
+    .faq-q {
+      width: 100%;
+      text-align: left;
+      padding: 18px 20px;
+      background: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--green-dark);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      transition: background var(--transition);
+      border: none;
+      font-family: inherit;
+    }
+
+    .faq-q:hover {
+      background: var(--off-white);
+    }
+
+    .faq-q i {
+      color: var(--orange);
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .faq-q.open i {
+      transform: rotate(45deg);
+    }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+
+    .faq-a.open {
+      max-height: 240px;
+    }
+
+    .faq-a p {
+      padding: 0 20px 18px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .contact-page-hero {
+        padding: 90px 20px 80px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar always-dark scrolled" id="navbar" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Enjo Constructions Home">
+        <div class="logo-icon"><img src="assets/images/logo.svg" alt="Enjo Logo" height="35px"></div>
+        Enjo <span>Constructions</span>
+      </a>
+      <ul class="nav-links" id="nav-links" role="menubar">
+        <li><a href="index.html" role="menuitem">Home</a></li>
+        <li><a href="plans.html" role="menuitem">Floor Plans</a></li>
+        <li><a href="blog.html" role="menuitem">Tips &amp; Blog</a></li>
+        <li><a href="about.html" role="menuitem">About</a></li>
+        <li><a href="contact.html" role="menuitem" aria-current="page">Contact</a></li>
+        <li class="mobile-only" role="none">
+          <a href="contact.html" class="btn btn-primary nav-cta-drawer" role="menuitem">Get Free Quote</a>
+        </li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary btn-sm nav-cta">Get Free Quote</a>
+      <button class="hamburger" id="hamburger" aria-label="Open mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <header class="contact-page-hero">
+    <div class="container">
+      <span class="section-label" style="background:rgba(255,255,255,0.15);color:var(--white);">We're Here to Help</span>
+      <h1>Get in Touch</h1>
+      <p style="margin-top:14px;">Have a question about designs, costs, or permits? We respond to every WhatsApp
+        message, usually within a few hours.</p>
+    </div>
+  </header>
+
+  <!-- MAIN CONTACT SECTION -->
+  <main class="section" style="padding-top:50px;">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Contact Info Column -->
+        <div class="contact-info">
+          <span class="section-label">Reach Out Directly</span>
+          <h2 class="section-title">Talk to Us – We Won't Bite</h2>
+          <p>Whether you're planning your first home or you're a seasoned builder, we're happy to answer questions.
+            WhatsApp is fastest.</p>
+
+          <!-- Primary WhatsApp CTA -->
+          <a href="https://wa.me/256757105857?text=Hi%20Enjo%20Constructions%2C%20I%20need%20help%20with%20my%20home%20project."
+            class="wa-btn-big" id="contact-wa-primary" style="margin-top:24px;" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i>
+            <div>
+              <div style="font-size:0.78rem;opacity:0.85;font-weight:400;">Fastest response · Usually within 1 hour</div>
+              Chat on WhatsApp Now
+            </div>
+          </a>
+
+          <!-- Contact items -->
+          <div class="contact-item" id="contact-phone-info">
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <div class="ci-label">Phone / WhatsApp</div>
+              <a href="tel:+256757105857" class="ci-val">+256 757 105857</a>
+            </div>
+          </div>
+
+          <div class="contact-item" id="contact-email-info">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <div class="ci-label">Email</div>
+              <a href="mailto:enjoconstruction@gmail.com" class="ci-val">enjoconstruction@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-item" id="contact-address">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <div class="ci-label">Location</div>
+              <a href="https://www.google.com/maps/place/Ndeeba,+Kampala/@0.2917876,32.5628922,16z"
+                target="_blank" rel="noopener" class="ci-val"
+                style="text-decoration:underline;text-decoration-color:rgba(0,0,0,0.2);">Ndeeba, Kampala, Uganda</a>
+              <div style="font-size:0.8rem;color:var(--text-muted);margin-top:3px;">Consultations by appointment</div>
+            </div>
+          </div>
+
+          <div class="contact-item" id="contact-hours">
+            <div class="contact-icon"><i class="fas fa-clock"></i></div>
+            <div>
+              <div class="ci-label">Working Hours</div>
+              <div class="ci-val">Mon – Sat: 8AM – 7PM</div>
+              <div style="font-size:0.8rem;color:var(--text-muted);margin-top:3px;">Sunday: WhatsApp only</div>
+            </div>
+          </div>
+
+          <!-- Social links -->
+          <div style="margin-top:24px;">
+            <div style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:12px;">
+              Follow Us
+            </div>
+            <div style="display:flex;gap:10px;">
+              <a href="https://www.tiktok.com/@enjoconstructions" target="_blank" rel="noopener"
+                style="width:44px;height:44px;border-radius:50%;background:var(--beige);display:flex;align-items:center;justify-content:center;color:var(--text-dark);font-size:1.1rem;transition:all 0.3s;border:1px solid var(--border);"
+                aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+              <a href="https://wa.me/256757105857" target="_blank" rel="noopener"
+                style="width:44px;height:44px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.1rem;transition:all 0.3s;"
+                aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+
+          <!-- Google Maps Embed -->
+          <div id="map-embed"
+            style="margin-top:24px;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-md);border:2px solid var(--border);">
+            <iframe
+              title="Enjo Constructions – Ndeeba, Kampala"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7294083885!2d32.5628922!3d0.2917876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbcdfd2d68ca7%3A0x79ac0b82fef16412!2sNdeeba%2C%20Kampala!5e0!3m2!1sen!2sug!4v1717900000000!5m2!1sen!2sug"
+              width="100%"
+              height="240"
+              style="display:block;border:none;"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <a href="https://www.google.com/maps/place/Ndeeba,+Kampala/@0.2917876,32.5628922,16z"
+              target="_blank" rel="noopener" id="open-gmaps"
+              style="display:flex;align-items:center;gap:8px;padding:12px 16px;background:var(--white);font-size:0.82rem;font-weight:600;color:var(--green-mid);border-top:1px solid var(--border);transition:background 0.3s;"
+              onmouseover="this.style.background='var(--beige)'" onmouseout="this.style.background='var(--white)'">
+              <i class="fas fa-external-link-alt" style="color:var(--orange);"></i>
+              Open in Google Maps &nbsp;·&nbsp; Ndeeba, Kampala
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact Form Column -->
+        <div class="contact-form-card reveal" id="contact-form-card">
+          <h3><i class="fas fa-paper-plane" style="color:var(--orange);margin-right:10px;"></i>Send Us a Message</h3>
+          <p style="font-size:0.88rem;color:var(--text-muted);margin-bottom:24px;">Fill in the form below and we'll
+            reply via WhatsApp or email within 24 hours.</p>
+
+          <!-- Success message -->
+          <div class="form-success" id="form-success">
+            <i class="fas fa-circle-check" style="color:var(--green-mid);font-size:1.2rem;flex-shrink:0;"></i>
+            <span>Message sent successfully! We'll reply within 24 hours. For faster help, WhatsApp us directly.</span>
+          </div>
+
+          <form id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name">Full Name *</label>
+                <input type="text" id="contact-name" name="name" placeholder="e.g. John Ssemwanga" required
+                  autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label for="contact-phone">Phone / WhatsApp *</label>
+                <input type="tel" id="contact-phone" name="phone" placeholder="+256 7XX XXX XXX" required
+                  autocomplete="tel" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contact-email-field">Email Address <span style="font-weight:400;font-size:0.75rem;">(Optional)</span></label>
+              <input type="email" id="contact-email-field" name="email" placeholder="your@email.com"
+                autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="contact-subject">What do you need help with?</label>
+              <select id="contact-subject" name="subject">
+                <option value="">Select a topic…</option>
+                <option value="floor-plan">I want a floor plan</option>
+                <option value="cost-estimate">I need a cost estimate</option>
+                <option value="consultation">General construction advice</option>
+                <option value="custom">Custom / bespoke design</option>
+                <option value="permits">Permits &amp; regulations</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Your Message *</label>
+              <textarea id="contact-message" name="message"
+                placeholder="Tell us about your project: plot size, location, budget, number of bedrooms needed…"
+                required></textarea>
+            </div>
+            <button type="submit" class="btn btn-green" style="width:100%;justify-content:center;" id="contact-submit">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+            <p style="font-size:0.78rem;color:var(--text-muted);text-align:center;margin-top:14px;">
+              <i class="fas fa-lock"></i> Your information is private and will never be shared with third parties.
+            </p>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- FAQ Section -->
+      <div style="margin-top:70px;">
+        <div class="text-center" style="margin-bottom:36px;">
+          <span class="section-label">Common Questions</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
+        <div style="max-width:720px;margin:0 auto;" id="faq-section">
+
+          <div class="faq-item reveal">
+            <button class="faq-q" onclick="toggleFaq(this)" id="faq-q1" aria-expanded="false">
+              How much does it cost to build a house in Uganda in 2025?
+              <i class="fas fa-plus"></i>
+            </button>
+            <div class="faq-a" id="faq-a1">
+              <p>It depends on the size and finish level. A basic 1-bedroom starter home begins from UGX 8M–14M. A
+                2-bedroom bungalow typically costs UGX 18M–40M. A standard 3-bedroom can range UGX 35M–60M. Executive
+                builds and storey buildings go higher. Contact us for a free personalised estimate.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-d1">
+            <button class="faq-q" onclick="toggleFaq(this)" id="faq-q2" aria-expanded="false">
+              Do you build houses or just provide designs?
+              <i class="fas fa-plus"></i>
+            </button>
+            <div class="faq-a" id="faq-a2">
+              <p>We currently specialise in design consultancy, floor plans, and construction advice. We help you
+                understand what to build, what it costs, and how to manage your builder. We can also refer you to
+                trusted local contractors in your area.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-d2">
+            <button class="faq-q" onclick="toggleFaq(this)" id="faq-q3" aria-expanded="false">
+              Can I get a floor plan for my specific plot size?
+              <i class="fas fa-plus"></i>
+            </button>
+            <div class="faq-a" id="faq-a3">
+              <p>Absolutely. Send us your plot dimensions (length × width in metres), budget, and number of bedrooms
+                via WhatsApp. We'll recommend the best design from our library or discuss a custom plan option for you.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-q" onclick="toggleFaq(this)" id="faq-q4" aria-expanded="false">
+              Are your cost estimates accurate?
+              <i class="fas fa-plus"></i>
+            </button>
+            <div class="faq-a" id="faq-a4">
+              <p>Our estimates are based on current Kampala market prices updated quarterly. Actual costs vary by
+                location, materials chosen, and labour rates. We always give a range to reflect real-world variability.
+                We're honest about costs — that's what makes us trusted.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-d1">
+            <button class="faq-q" onclick="toggleFaq(this)" id="faq-q5" aria-expanded="false">
+              I'm in the diaspora planning to build in Uganda. Can you help?
+              <i class="fas fa-plus"></i>
+            </button>
+            <div class="faq-a" id="faq-a5">
+              <p>Yes! Many of our clients are Ugandan diaspora planning builds back home. We can guide you through
+                everything remotely via WhatsApp video call — from choosing the right design to overseeing the build
+                with trusted local supervisors.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-d2">
+            <button class="faq-q" onclick="toggleFaq(this)" id="faq-q6" aria-expanded="false">
+              How long does it take to build a 3-bedroom house?
+              <i class="fas fa-plus"></i>
+            </button>
+            <div class="faq-a" id="faq-a6">
+              <p>A well-managed 3-bedroom bungalow typically takes 6 to 10 months from foundation to finishing, assuming
+                consistent material supply and skilled labour. Self-funded builds done in phases can take 2–3 years.
+                Proper planning and a professional fundi significantly speed up the process.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="logo-icon">🏗️</div>
+          Enjo Constructions
+        </div>
+        <p>Making quality home design accessible to every Ugandan. Smart, local, affordable construction solutions since
+          2020.</p>
+        <div class="footer-social">
+          <a href="https://www.tiktok.com/@enjoconstructions" aria-label="TikTok" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
+          <a href="https://wa.me/256757105857" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="plans.html">Floor Plans</a></li>
+          <li><a href="blog.html">Tips &amp; Blog</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>House Types</h4>
+        <ul>
+          <li><a href="plans.html?beds=1">1BR Starter Homes</a></li>
+          <li><a href="plans.html?beds=2">2BR Modern Homes</a></li>
+          <li><a href="plans.html?type=bungalow&beds=3">3BR Bungalows</a></li>
+          <li><a href="plans.html?beds=4">4BR Family Homes</a></li>
+          <li><a href="plans.html?type=storey">Storey Buildings</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <ul>
+          <li><a href="https://wa.me/256757105857" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp" style="color:#25d366"></i> +256 757 105857</a></li>
+          <li><a href="mailto:enjoconstruction@gmail.com">
+            <i class="fas fa-envelope" style="color:var(--orange)"></i> enjoconstruction@gmail.com</a></li>
+          <li style="color:rgba(255,255,255,0.55);font-size:0.88rem;display:flex;align-items:center;gap:8px;">
+            <i class="fas fa-map-marker-alt" style="color:var(--terracotta)"></i> Ndeeba, Kampala, Uganda</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Enjo Constructions. All rights reserved.</span>
+      <span>Made with ❤️ for <a href="#">Ugandan homebuilders</a></span>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/256757105857" class="wa-float" aria-label="Chat on WhatsApp" title="Chat on WhatsApp"
+    id="wa-float" target="_blank" rel="noopener">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // FAQ accordion
+    function toggleFaq(btn) {
+      const answer = btn.nextElementSibling;
+      const isOpen = btn.classList.contains('open');
+      document.querySelectorAll('.faq-q').forEach(b => {
+        b.classList.remove('open');
+        b.setAttribute('aria-expanded', 'false');
+        b.nextElementSibling.classList.remove('open');
+      });
+      if (!isOpen) {
+        btn.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        answer.classList.add('open');
+      }
+    }
+  </script>
+</body>
+
+</html>

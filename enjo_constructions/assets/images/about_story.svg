@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 480" width="100%" height="100%">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bluePrintGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a4731" />
+      <stop offset="100%" stop-color="#2d6a4f" />
+    </linearGradient>
+    <linearGradient id="storyHouseRoof" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c1440e" />
+      <stop offset="100%" stop-color="#f4821f" />
+    </linearGradient>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(82, 183, 136, 0.15)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Left Side: Blueprint Grid Background -->
+  <rect x="0" y="0" width="300" height="480" fill="url(#bluePrintGrad)" />
+  <rect x="0" y="0" width="300" height="480" fill="url(#grid)" />
+
+  <!-- Right Side: Real House Ground Background -->
+  <rect x="300" y="0" width="300" height="480" fill="#faf8f5" />
+  <path d="M300 400 Q 450 380, 600 400 L 600 480 L 300 480 Z" fill="#e8d9c4" />
+  <path d="M300 420 Q 450 400, 600 430 L 600 480 L 300 480 Z" fill="#52b788" />
+
+  <!-- Blueprint Drawings (Left Side) -->
+  <circle cx="150" cy="240" r="100" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-dasharray="5 5" />
+  <circle cx="150" cy="240" r="60" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+  <line x1="150" y1="100" x2="150" y2="380" stroke="rgba(255,255,255,0.2)" stroke-width="1" />
+  <line x1="50" y1="240" x2="250" y2="240" stroke="rgba(255,255,255,0.2)" stroke-width="1" />
+
+  <!-- Wireframe House (Left) -->
+  <polygon points="70,260 150,200 230,260" fill="none" stroke="#52b788" stroke-width="2.5" />
+  <rect x="85" y="260" width="130" height="90" fill="none" stroke="#52b788" stroke-width="2.5" />
+  <rect x="135" y="295" width="30" height="55" fill="none" stroke="#52b788" stroke-width="2" />
+  <rect x="100" y="275" width="25" height="25" fill="none" stroke="#52b788" stroke-width="1.5" />
+  <rect x="175" y="275" width="25" height="25" fill="none" stroke="#52b788" stroke-width="1.5" />
+
+  <!-- Dimension indicators -->
+  <line x1="85" y1="365" x2="215" y2="365" stroke="#f4821f" stroke-width="1.5" />
+  <line x1="85" y1="360" x2="85" y2="370" stroke="#f4821f" stroke-width="1.5" />
+  <line x1="215" y1="360" x2="215" y2="370" stroke="#f4821f" stroke-width="1.5" />
+  <text x="150" y="380" fill="#f4821f" font-family="Inter" font-size="10" font-weight="700" text-anchor="middle">9.00 m</text>
+
+  <!-- Solid House (Right) -->
+  <!-- Foundation -->
+  <rect x="360" y="335" width="180" height="15" fill="#7f8c8d" />
+  <!-- Walls -->
+  <rect x="370" y="235" width="160" height="100" fill="#f5ede0" stroke="#e2d9ce" stroke-width="2" />
+  <!-- Gabled Roof -->
+  <polygon points="350,235 450,165 550,235" fill="url(#storyHouseRoof)" />
+  <polygon points="350,235 360,242 450,178 540,242 550,235" fill="#c1440e" />
+  <!-- Door -->
+  <rect x="435" y="265" width="30" height="70" fill="#1a4731" rx="2" />
+  <circle cx="442" cy="300" r="2" fill="#f4821f" />
+  <!-- Windows -->
+  <rect x="390" y="265" width="30" height="30" fill="#2c3e50" rx="3" />
+  <rect x="393" y="268" width="24" height="24" fill="#dbeafe" />
+  <rect x="480" y="265" width="30" height="30" fill="#2c3e50" rx="3" />
+  <rect x="483" y="268" width="24" height="24" fill="#dbeafe" />
+
+  <!-- Transition Overlay Center Details -->
+  <!-- A hand holding a smartphone in front -->
+  <!-- Background glow for phone -->
+  <circle cx="300" cy="240" r="70" fill="#ffffff" opacity="0.15" filter="blur(10px)" />
+  <!-- Smartphone Frame -->
+  <rect x="265" y="140" width="70" height="130" rx="10" fill="#1c1c1c" stroke="#faf8f5" stroke-width="3" />
+  <rect x="270" y="150" width="60" height="110" fill="#1a4731" rx="4" />
+  <!-- Speaker -->
+  <line x1="295" y1="145" x2="305" y2="145" stroke="#faf8f5" stroke-width="2" stroke-linecap="round" />
+  <!-- Home Indicator -->
+  <line x1="290" y1="256" x2="310" y2="256" stroke="#faf8f5" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Screen Content: Enjo Logo and Social Growth -->
+  <path d="M300 160 L285 175 H290 V195 H310 V175 H315 Z" fill="#f4821f" />
+  <text x="300" y="212" fill="#ffffff" font-family="Inter" font-size="8" font-weight="800" text-anchor="middle">Enjo</text>
+  <text x="300" y="222" fill="#52b788" font-family="Inter" font-size="6" font-weight="700" text-anchor="middle">CONSTRUCTION</text>
+  <!-- Interactive Heart or Play icon -->
+  <circle cx="300" cy="238" r="8" fill="#c1440e" />
+  <polygon points="298,235 304,238 298,241" fill="#ffffff" />
+
+  <!-- Text Badge at the Bottom -->
+  <rect x="220" y="390" width="160" height="36" rx="18" fill="#faf8f5" stroke="#f4821f" stroke-width="2" />
+  <text x="300" y="412" fill="#1a4731" font-family="Inter" font-size="11" font-weight="800" text-anchor="middle">EST. 2020 IN UGANDA</text>
+</svg>
